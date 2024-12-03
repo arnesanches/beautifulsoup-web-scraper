@@ -30,4 +30,19 @@ def analyze_html(html):
 if html_content:
     soup = analyze_html(html_content)
     print("HTML analisado com sucesso.")
+    
 
+def extract_titles(soup):
+    """Extrai os títulos da página definidos na tag <h2>."""
+    titles = soup.find_all('h2')
+    return [title.get_text().strip() for title in titles]
+
+# Testando a extração de títulos
+if soup:
+    titles = extract_titles(soup)
+    if titles:
+        print("Títulos encontrados:")
+        for title in titles:
+            print(f"- {title}")
+    else:
+        print("Nenhum título encontrado na página.")
