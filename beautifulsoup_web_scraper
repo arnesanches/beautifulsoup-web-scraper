@@ -1,5 +1,6 @@
 import requests
 
+
 def get_html(url):
     """Faz a requisição HTTP e retorna o conteúdo HTML se bem-sucedida."""
     try:
@@ -12,7 +13,21 @@ def get_html(url):
     except requests.RequestException as e:
         print(f"Ocorreu um erro ao tentar acessar o site: {e}")
         return None
+    
 
 # Testando a função de requisição
 url = 'https://bbc.com'
 html_content = get_html(url)
+
+from bs4 import BeautifulSoup
+
+
+def analyze_html(html):
+    """Analisa o HTML usando BeautifulSoup."""
+    return BeautifulSoup(html, 'html.parser')
+
+# Testando a análise do HTML
+if html_content:
+    soup = analyze_html(html_content)
+    print("HTML analisado com sucesso.")
+
