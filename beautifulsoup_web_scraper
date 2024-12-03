@@ -30,7 +30,7 @@ def analyze_html(html):
 if html_content:
     soup = analyze_html(html_content)
     print("HTML analisado com sucesso.")
-    
+
 
 def extract_titles(soup):
     """Extrai os títulos da página definidos na tag <h2>."""
@@ -46,3 +46,17 @@ if soup:
             print(f"- {title}")
     else:
         print("Nenhum título encontrado na página.")
+        
+
+def save_to_file(data, filename):
+    """Salva os dados extraídos em um arquivo de texto."""
+    try:
+        with open(filename, 'w', encoding='utf=8') as file:
+            file.write("\n".join(data))
+        print(f"Títulos salvos em {filename}.")
+    except IOError as e:
+        print(f"Erro ao salvar o arquivo: {e}")
+
+# Testando o salvamento em arquivo
+if titles:
+    save_to_file(titles, 'bbc_titles.txt')
