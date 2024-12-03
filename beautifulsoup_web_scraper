@@ -1,6 +1,5 @@
 import requests
 
-
 def get_html(url):
     """Faz a requisição HTTP e retorna o conteúdo HTML se bem-sucedida."""
     try:
@@ -13,8 +12,7 @@ def get_html(url):
     except requests.RequestException as e:
         print(f"Ocorreu um erro ao tentar acessar o site: {e}")
         return None
-    
-
+   
 # Testando a função de requisição
 url = 'https://bbc.com'
 html_content = get_html(url)
@@ -46,7 +44,7 @@ if soup:
             print(f"- {title}")
     else:
         print("Nenhum título encontrado na página.")
-        
+
 
 def save_to_file(data, filename):
     """Salva os dados extraídos em um arquivo de texto."""
@@ -60,3 +58,19 @@ def save_to_file(data, filename):
 # Testando o salvamento em arquivo
 if titles:
     save_to_file(titles, 'bbc_titles.txt')
+
+
+def main(url, filename):
+    """Executa o processo completo de Web Scraping."""
+    html = get_html(url)
+    if html:
+        soup = analyze_html(html)
+        titles = extract_titles(soup)
+        if titles:
+            save_to_file(titles, filename)
+        else:
+            print("Nenhum título foi extraído.")
+
+# Executando o programa completo
+if __name__ == "__main__":
+    main('https://bbc.com', 'bbc_titles.txt')
