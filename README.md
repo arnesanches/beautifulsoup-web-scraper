@@ -1,3 +1,18 @@
+English / Português
+
+Beautiful Soup Web Scraper
+
+This project is a simple example of web scraping developed in Python. It makes requests to the BBC website to extract the titles of articles found on the homepage. After extraction, the titles are saved in a text file for later reference or use.
+
+The script is designed to perform an HTTP request to fetch the HTML content of the page, parse the HTML with the BeautifulSoup library, locate the desired titles, and save the extracted data in a UTF-8 formatted text file. All steps of the process are automated and organized into specific functions to facilitate code maintenance and reuse.
+
+To run the code, you need to have Python 3.7 or higher installed, as well as the requests and beautifulsoup4 libraries. If they are not yet installed, they can be added to the environment using the pip command. It is recommended to execute the script in a terminal, providing the desired URL and checking the generated file in the project directory.
+
+When executed, the script accesses the BBC website, analyzes the returned HTML content, and extracts the found titles. These titles are saved in a file named "bbc_titles.txt," located in the same directory as the script. The generated file organizes the extracted titles, each on a new line.
+
+This project was created for educational purposes to demonstrate how to structure a basic web scraper in Python. It is important to review the website's terms of use before performing web scraping, as some practices may be considered inappropriate or violate the policies of certain websites.
+
+
 Beautiful Soup Web Scraper
 
 Este projeto é um exemplo simples de web scraping desenvolvido em Python. Ele realiza requisições ao site da BBC para extrair os títulos dos artigos encontrados na página inicial. Após a extração, os títulos são salvos em um arquivo de texto para consulta ou uso posterior.
