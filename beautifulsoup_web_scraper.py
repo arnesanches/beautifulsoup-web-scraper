@@ -74,6 +74,3 @@ def main(url, filename):
 # Executando o programa completo
 if __name__ == "__main__":
     main('https://bbc.com', 'bbc_titles.txt')
-
-    
- 
