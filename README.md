@@ -12,7 +12,7 @@ When executed, the script accesses the BBC website, analyzes the returned HTML c
 
 This project was created for educational purposes to demonstrate how to structure a basic web scraper in Python. It is important to review the website's terms of use before performing web scraping, as some practices may be considered inappropriate or violate the policies of certain websites.
 
-
+---
 
 ### Português
 
